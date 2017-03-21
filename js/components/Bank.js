@@ -5,6 +5,7 @@ export default class Bank extends Component {
     return (
       <div className='Banking'>
         Banking
+        <img src="test.com" />
       </div>
     );
   }

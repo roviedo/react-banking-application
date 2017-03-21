@@ -26,7 +26,9 @@ module.exports = {
                         babelrc: false,
                         presets: [
                             'es2015',
-                            'react'
+                            'react',
+                            'stage-0',
+                            'airbnb'
                         ]
                     }
                 }]
