@@ -15,16 +15,25 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json'] // Revisit this for loading modules without an extension
     },
     module: {
-        loaders: [
-            {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loaders: ["react-hot-loader", "babel-loader"],
-            },
-            {
+        rules: [{
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: [{
+                    loader: 'react-hot-loader'
+                }, {
+                    loader: 'babel-loader',
+                    options: {
+                        babelrc: false,
+                        presets: [
+                            'es2015',
+                            'react'
+                        ]
+                    }
+                }]
+            }, {
                 test: /\.html$/,
                 loader: "file-loader?name=[name].[ext]",
-            },
-        ],
+            }
+        ]
     }
 };

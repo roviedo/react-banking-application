@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Menu from './components/Bank.js';
+import Bank from './components/Bank.js';
 
 ReactDOM.render(
-  <Menu />,
+  <Bank />,
   document.getElementById('app')
 );
