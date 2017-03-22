@@ -13,9 +13,9 @@ describe('Array', function() {
   });
 });
 
-describe('<Bank/>', function () {
-  it('should have an image to display', function () {
-    const wrapper = shallow(<Bank/>);
-    expect(wrapper.find('img')).to.have.length(1);
-  });
-});
+// describe('<Bank/>', function () {
+//   it('should have an image to display', function () {
+//     const wrapper = shallow(<Bank/>);
+//     expect(wrapper.find('img')).to.have.length(1);
+//   });
+// });

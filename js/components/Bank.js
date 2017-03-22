@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button, Input } from 'semantic-ui-react';
+import Login from './Login.js';
 
 export class Bank extends Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
-        console.log('props', this.props);
         return (
             <div className='Banking'>
-                Bankinggggg
-                <img src="test.com" />
+                <Login />
             </div>
         );
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        isCoolTest: state.account.get('isCoolTest')
-    };
-}
-
-export default connect(mapStateToProps)(Bank);
+export default connect()(Bank);

@@ -15,8 +15,9 @@ npm install
 
 ### Running the application
 ```
-<command to run server>
-<go to browser and setup your bank and bank away>
+npm run dev
+webpack --watch
+go to browser: http://localhost:8000
 ```
 
 ### Running The Tests

@@ -7,11 +7,11 @@ import thunk from 'redux-thunk';
 import Bank from './components/Bank.js';
 
 //Reducers
-import account from '../reducers/account';
+import login from '../reducers/login';
 
 const store = createStore(
     combineReducers({
-        account,
+        login,
     }),
     applyMiddleware(thunk)
 );
