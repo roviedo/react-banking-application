@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 
-import * as actions from '../actions/login.js';
+import * as loginActions from '../actions/login.js';
+import * as accountActions from '../actions/account.js';
 
 describe('login actions', () => {
     it('creates an action to update credentials', () => {
@@ -10,7 +11,7 @@ describe('login actions', () => {
             credentials
         };
 
-        const updatedCredentials = actions.updateCredentials(credentials);
+        const updatedCredentials = loginActions.updateCredentials(credentials);
         expect(updatedCredentials.type).to.equal(expectedAction.type);
         expect(updatedCredentials.username).to.equal(expectedAction.username);
     });
