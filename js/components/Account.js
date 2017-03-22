@@ -14,6 +14,9 @@ export class Account extends Component {
     }
 
     render() {
+        //TODO: Load accountData from state which we already have
+        //TODO: Add logout component to this page that will trigger deleting cookie
+        console.log('props', this.props);
         const accountObject = {
             accountId: 12345,
             balance: 12000,

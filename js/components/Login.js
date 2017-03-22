@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Input } from 'semantic-ui-react';
 import { updateCredentials } from '../../actions/login.js';
+import { userLogin } from '../../actions/login.js';
 
 export class Login extends Component {
     constructor(props) {
@@ -9,6 +10,7 @@ export class Login extends Component {
 
         this._handleUsernameChange = this._handleUsernameChange.bind(this);
         this._handlePasswordChange = this._handlePasswordChange.bind(this);
+        this._handleLogin = this._handleLogin.bind(this);
     }
 
     render() {
@@ -20,7 +22,7 @@ export class Login extends Component {
                 <br/>
                 <Input focus onChange={ this._handlePasswordChange }/>
                 <br/>
-                <Button primary>Submit</Button>
+                <Button primary onClick={ this._handleLogin }>Submit</Button>
             </div>
         );
     }
@@ -40,6 +42,15 @@ export class Login extends Component {
             }
         );
     }
+
+    _handleLogin() {
+        this.props.userLogin(
+            {
+                username: this.props.login.username,
+                password: this.props.login.password
+            }
+        );
+    }
 }
 
 function mapStateToProps(state) {
@@ -53,6 +64,9 @@ function mapDispatchToProps(dispatch) {
     return {
         updateCredentials(credentials) {
             dispatch(updateCredentials(credentials));
+        },
+        userLogin(credentials) {
+            dispatch(userLogin(credentials));
         }
     }
 }

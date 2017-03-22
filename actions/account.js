@@ -17,3 +17,13 @@ export function updateWithdrawal(withdrawal) {
         withdrawal
     };
 }
+
+/**
+ * @param {object} accountData - Object, user account data to be loaded to state.
+ */
+export function loadAccountData(accountData) {
+    return {
+        type: 'LOAD_ACCOUNT_DATA',
+        accountData
+    }
+}

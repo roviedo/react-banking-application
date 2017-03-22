@@ -12,7 +12,12 @@ const actionHandlers = {
     ['UPDATE_WITHDRAWAL']: (state, action) => {
         const { withdrawal } = action;
         return Object.assign({}, state, withdrawal);
-    }
+    },
+
+    ['LOAD_ACCOUNT_DATA']: (state, action) => {
+        const { data } = action;
+        return Object.assign({}, state, data);
+    },
 };
 
 export default function login(state = defaultState, action) {

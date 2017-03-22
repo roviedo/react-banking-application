@@ -1,19 +1,20 @@
 import Immutable from 'immutable';
 
 const defaultState = {
-    isCoolTest: false,
     username: '',
     password: ''
 };
 
 const actionHandlers = {
-    ['testing']: (state, action) => {
-        return state.set('isCoolTest', action.isCoolTest);
-    },
-
     ['UPDATE_CREDENTIALS']: (state, action) => {
         const { credentials } = action;
         return Object.assign({}, state, credentials);
+    },
+    ['IS_USER_LOGGED_IN']: (state, action) => {
+        console.log('djfkla;dsjdaskl; ds am i here');
+        const { isLoggedIn } = action;
+        console.log('isLoggedIn', isLoggedIn);
+        return Object.assign({}, state, isLoggedIn);
     }
 };
 
