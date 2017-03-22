@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import {expect} from 'chai';
+import { expect } from 'chai';
 
-import Bank from '../js/components/Bank.js';
+import { Bank } from '../js/components/Bank.js';
 
 var assert = require('assert');
 describe('Array', function() {

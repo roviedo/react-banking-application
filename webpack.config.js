@@ -3,12 +3,13 @@ module.exports = {
 
     entry: {
         javascript: "./js/app.js",
-        html: "./index.html",
+        // html: "./index.html",
     },
 
     output: {
-        filename: "[name].js",
+        filename: "bundle.js",
         path: __dirname + "/dist",
+        publicPath: __dirname + "/dist"
     },
 
     resolve: {
