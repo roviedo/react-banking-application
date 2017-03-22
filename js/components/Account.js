@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Input, Label } from 'semantic-ui-react';
+import { Button, Input, Label, Table } from 'semantic-ui-react';
 import { updateDeposit, updateWithdrawal } from '../../actions/account.js';
 
 export class Account extends Component {
@@ -14,6 +14,67 @@ export class Account extends Component {
     }
 
     render() {
+        const accountObject = {
+            accountId: 12345,
+            balance: 12000,
+            name: 'Raul Oviedo',
+            transactions: [
+                {   transactionId: 1234,
+                    transactionType: 'withdrawal',
+                    amount: 200,
+                    date: '12/1/2016'
+                },
+                {
+                    transactionId: 1235,
+                    transactionType: 'deposit',
+                    amount: 400,
+                    date: '12/23/2016'
+                }
+            ]
+        }
+        let accountInfo = (
+            <Table stripped>
+                <Table.Header>
+                    <Table.Row>
+                        <Table.HeaderCell>Name</Table.HeaderCell>
+                        <Table.HeaderCell>AccountId</Table.HeaderCell>
+                        <Table.HeaderCell>Account Balance</Table.HeaderCell>
+                    </Table.Row>
+              </Table.Header>
+
+              <Table.Body>
+                    <Table.Row>
+                        <Table.Cell>{ accountObject.name }</Table.Cell>
+                        <Table.Cell>{ accountObject.accountId }</Table.Cell>
+                        <Table.Cell>$ { accountObject.balance }</Table.Cell>
+                    </Table.Row>
+                </Table.Body>
+            </Table>
+        )
+
+        let accountTransactions = (
+            <Table stripped>
+                <Table.Header>
+                    <Table.Row>
+                        <Table.HeaderCell>TransactionId</Table.HeaderCell>
+                        <Table.HeaderCell>TransactionType</Table.HeaderCell>
+                        <Table.HeaderCell>Amount</Table.HeaderCell>
+                        <Table.HeaderCell>Date</Table.HeaderCell>
+                    </Table.Row>
+              </Table.Header>
+
+              <Table.Body>
+                { accountObject.transactions.map((transaction) =>
+                    <Table.Row>
+                        <Table.Cell>{ transaction.transactionId }</Table.Cell>
+                        <Table.Cell>{ transaction.transactionType }</Table.Cell>
+                        <Table.Cell>$ { transaction.amount }</Table.Cell>
+                        <Table.Cell>{ transaction.date }</Table.Cell>
+                    </Table.Row>
+                ) }
+                </Table.Body>
+            </Table>
+        );
         return (
             <div className='account'>
                 <h3>My Bank Accout</h3>
@@ -33,6 +94,8 @@ export class Account extends Component {
                 </Input>
                 <Button primary onClick={ this._handleWithdrawal }>Submit</Button>
                 <br/>
+                { accountInfo }
+                { accountTransactions }
             </div>
         );
     }
