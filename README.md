@@ -6,12 +6,15 @@
   </tr>
 </table>
 
+Banking application with NO server-side. User can fake login, withdraw and deposit using React, Redux, Semantic UI and Webpack.
+
 ### System Requirements
 Mac OSX or Linux
 
 ### Installation
 - Get node + npm from https://nodejs.org/en/download/ and go through installation process of it.
 - Install webpack https://webpack.js.org/guides/installation/
+    * NOTE: I'm currently using a global installation (npm install webpack -g)
 - Do the following from your bash shell
 ```
 cd into banking_app

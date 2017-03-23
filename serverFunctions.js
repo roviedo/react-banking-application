@@ -31,6 +31,9 @@ export function createNewTransaction(transactionId, transactionType, currencyAmo
 }
 
 export function getTransactionId(transactions) {
-    // This would use primary key id from DB which auto increments MySQL for example.
+    /* This would use primary key id from DB which auto increments MySQL for example.
+    TransactionId is only incrementing based on the current user transaction
+    ids but we should get all users transactionIds, then get the highest one
+    and increment that one. */
     return transactions.slice(-1)[0]["transactionId"] + 1;
 }

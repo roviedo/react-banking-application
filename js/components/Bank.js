@@ -31,6 +31,8 @@ export class Bank extends Component {
             top: 20,
             right: 20
         };
+
+        // Change Account and Login components to use React Router
         let entryComponent;
         if (this.props.login.isLoggedIn) {
             entryComponent = (<Account />);
