@@ -5,7 +5,7 @@ import updateAccount from '../serverFunctions.js';
 describe('serverFunctions', () => {
 
     it('updates account with new balance and transaction', () => {
-        const transactionType = 'withdraw';
+        const transactionType = 'withdrawal';
         const currency = {currency: 123};
         const sessionId = "ae345vbc34567";
         let d = new Date;
@@ -29,8 +29,8 @@ describe('serverFunctions', () => {
                     "amount": 400,
                     "date": "12/23/2016"
                 },
-                {   "transactionId": 1239,
-                    "transactionType": "withdraw",
+                {   "transactionId": 1236,
+                    "transactionType": "withdrawal",
                     "amount": 123,
                     "date": shortDate
                 }

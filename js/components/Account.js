@@ -14,7 +14,6 @@ export class Account extends Component {
     }
 
     render() {
-        //TODO: Added logout component to this page that will trigger deleting cookie currently not working in chrome.
         const accountObject = this.props.account.accountData;
 
         let accountInfo = (

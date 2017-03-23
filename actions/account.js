@@ -28,7 +28,7 @@ export function updateWithdrawal(withdrawal) {
 export function withdrawCurrency(currency) {
     const sessionId = getCookie('sessionId');
     const username = sessionIdUsernameMapping[sessionId];
-    const accountData = updateAccount('withdraw', currency, sessionId);
+    const accountData = updateAccount('withdrawal', currency, sessionId);
 
     return {
         type: 'UPDATE_ACCOUNT_DATA',

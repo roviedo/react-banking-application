@@ -36,7 +36,7 @@ npm test
 ### Getting Started
 Refer to accounts.json file for dummy users I have created for logging into
 their respective bank accounts. The data structure of the account is
-key : username, value: nested structure of account
+key : username, value: nested structure of account.
 sample provided below
 
 ```
