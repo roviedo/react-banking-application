@@ -15,6 +15,7 @@ npm install
 ```
 
 ### Running the application
+- run following two commands in seperate shell tabs.
 ```
 npm run dev
 webpack --watch
@@ -55,3 +56,8 @@ sample provided below
     ]
 }
 ```
+
+### Issues
+Since we don't have a server, once you refresh the page all transactions
+are reset since the data is static loaded accounts.json, however this data would
+be fetched from Database through server request.

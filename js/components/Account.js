@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Input, Label, Table } from 'semantic-ui-react';
-import { updateDeposit, updateWithdrawal } from '../../actions/account.js';
+import { updateDeposit, updateWithdrawal, depositCurrency, withdrawCurrency } from '../../actions/account.js';
 
 export class Account extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ export class Account extends Component {
     }
 
     render() {
-        //TODO: Add logout component to this page that will trigger deleting cookie
+        //TODO: Added logout component to this page that will trigger deleting cookie currently not working in chrome.
         const accountObject = this.props.account.accountData;
 
         let accountInfo = (
@@ -86,11 +86,19 @@ export class Account extends Component {
     }
 
     _handleDeposit() {
-        console.log('handle deposit');
+        this.props.depositCurrency(
+            {
+                currency: this.props.account.deposit
+            }
+        );
     }
 
     _handleWithdrawal() {
-        console.log('handle withdrawal');
+        this.props.withdrawCurrency(
+            {
+                currency: this.props.account.withdrawal
+            }
+        );
     }
 
     _handleDepositChange(event) {
@@ -124,6 +132,12 @@ function mapDispatchToProps(dispatch) {
         },
         updateWithdrawal(withdrawal) {
             dispatch(updateWithdrawal(withdrawal));
+        },
+        depositCurrency(currency) {
+            dispatch(depositCurrency(currency));
+        },
+        withdrawCurrency(currency) {
+            dispatch(withdrawCurrency(currency));
         }
     }
 }

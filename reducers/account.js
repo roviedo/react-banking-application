@@ -18,6 +18,11 @@ const actionHandlers = {
         const { accountData } = action;
         return Object.assign({}, state, accountData);
     },
+
+    ['UPDATE_ACCOUNT_DATA']: (state, action) => {
+        const { accountData } = action;
+        return Object.assign({}, state, accountData);
+    }
 };
 
 export default function login(state = defaultState, action) {
