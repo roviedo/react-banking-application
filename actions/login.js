@@ -1,6 +1,6 @@
 import { setCookie } from '../js/utils.js';
 import accounts from '../accounts.json';
-
+import { loadAccountData } from './account.js';
 /**
  * @param {object} credentials - Objcet, username and password.
  */
@@ -70,5 +70,6 @@ export function userLogin(credentials) {
         const sessionId = data["sessionId"];
         setCookie('sessionId', sessionId, 1);
         dispatch(isUserLoggedIn({isLoggedIn: true}));
+        dispatch(loadAccountData({sessionId: sessionId}));
     }
 }

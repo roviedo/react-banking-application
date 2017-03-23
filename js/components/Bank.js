@@ -48,9 +48,7 @@ export class Bank extends Component {
     }
 
     _handleLogout() {
-        console.log('logout kid');
         const sessionId = getCookie('sessionId');
-        console.log(sessionId);
         deleteCookie(sessionId);
         // this.props.isUserLoggedIn({isLoggedIn: false});
     }

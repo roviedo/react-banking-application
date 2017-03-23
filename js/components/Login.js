@@ -14,7 +14,6 @@ export class Login extends Component {
     }
 
     render() {
-        console.log('props', this.props);
         return (
             <div className='login'>
                 <h3>Login to Your Bank Account</h3>

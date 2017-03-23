@@ -1,6 +1,10 @@
-# react-banking-application
-
 ## React Banking Application
+<table>
+  <tr>
+    <th>Author:</th>
+    <td>Raul Oviedo</td>
+  </tr>
+</table>
 
 ### System Requirements
 Mac OSX or Linux
@@ -56,8 +60,22 @@ sample provided below
     ]
 }
 ```
+ ### Logins to use to test application
+```
+raul
+1234
+
+john123
+12345
+
+cindy44
+54321
+```
 
 ### Issues
 Since we don't have a server, once you refresh the page all transactions
 are reset since the data is static loaded accounts.json, however this data would
 be fetched from Database through server request.
+
+Logging out not working in Chrome, need to pull up developer console, go to application,
+then cookies and delete sessionId cookie and refresh browser.
