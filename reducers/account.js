@@ -15,8 +15,8 @@ const actionHandlers = {
     },
 
     ['LOAD_ACCOUNT_DATA']: (state, action) => {
-        const { data } = action;
-        return Object.assign({}, state, data);
+        const { accountData } = action;
+        return Object.assign({}, state, accountData);
     },
 };
 

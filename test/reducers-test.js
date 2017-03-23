@@ -6,7 +6,6 @@ import accountReducer from '../reducers/account.js';
 
 describe('login reducer', () => {
     const defaultState = {
-        isCoolTest: false,
         username: '',
         password: ''
     };

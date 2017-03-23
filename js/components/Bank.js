@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import { Button, Input } from 'semantic-ui-react';
 import Login from './Login.js';
 import Account from './Account.js';
-import { getCookie } from '../utils.js'
+import { getCookie } from '../utils.js';
+import { isUserLoggedIn } from '../../actions/login.js';
+import { loadAccountData } from '../../actions/account.js';
 
 export class Bank extends Component {
     constructor(props) {
@@ -11,13 +13,18 @@ export class Bank extends Component {
     }
 
     componentWillMount() {
-        const isLoggedIn = this._isLoggedIn();
-        this.setState({isLoggedIn});
+        const sessionId = getCookie('sessionId');
+        let isLoggedIn = false;
+        if (sessionId) {
+            isLoggedIn = true;
+            this.props.loadAccountData({sessionId: sessionId});
+        }
+        this.props.isUserLoggedIn({isLoggedIn: isLoggedIn});
     }
 
     render() {
         let entryComponent;
-        if (this.state.isLoggedIn) {
+        if (this.props.login.isLoggedIn) {
             entryComponent = (<Account />);
         } else {
             entryComponent = (<Login />);
@@ -28,14 +35,23 @@ export class Bank extends Component {
             </div>
         );
     }
+}
 
-    _isLoggedIn() {
-        const sessionId = getCookie('sessionId');
-        if (sessionId) {
-            return true;
+function mapStateToProps(state) {
+    return {
+        login: state.login
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        isUserLoggedIn(isLoggedIn) {
+            dispatch(isUserLoggedIn(isLoggedIn));
+        },
+        loadAccountData(sessionId) {
+            dispatch(loadAccountData(sessionId));
         }
-        return false;
     }
 }
 
-export default connect()(Bank);
+export default connect(mapStateToProps, mapDispatchToProps)(Bank);
