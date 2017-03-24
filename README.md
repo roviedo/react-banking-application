@@ -26,7 +26,7 @@ npm install
 ```
 npm run dev
 webpack --watch
-go to browser: http://localhost:8000
+go to browser: http://localhost:8080
 ```
 
 ### Running The Tests
